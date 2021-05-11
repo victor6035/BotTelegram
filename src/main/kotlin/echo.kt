@@ -8,7 +8,7 @@ class echo {
     fun eco(){
         val bot = bot {
 
-            token =  "1776107814:AAF4_qjRVgQz0sdKa20hPy-ZX-KTlVy3Hwg"
+            token =  Constantes.miToken
 
             dispatch {
 
