@@ -18,7 +18,9 @@ repositories {
 dependencies {
     testImplementation(kotlin("test-junit"))
     implementation ("io.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:6.0.4")
+
 }
+
 
 tasks.test {
     useJUnit()
