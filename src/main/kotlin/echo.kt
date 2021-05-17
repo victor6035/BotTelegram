@@ -1,5 +1,6 @@
 import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
+import com.github.kotlintelegrambot.dispatcher.command
 import com.github.kotlintelegrambot.dispatcher.text
 import com.github.kotlintelegrambot.entities.ChatId
 
@@ -12,9 +13,12 @@ class echo {
 
             dispatch {
 
-                text {
+                command("eco") {
 
-                    bot.sendMessage(chatId = ChatId.fromId(message.chat.id), text = text)
+                    text {
+
+                        bot.sendMessage(chatId = ChatId.fromId(message.chat.id), text = text)
+                    }
                 }
             }
         }

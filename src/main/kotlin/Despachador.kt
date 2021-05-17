@@ -21,6 +21,8 @@ import com.github.kotlintelegrambot.entities.ChatId
 
 class Despachador {
 
+
+
     fun despachador(){
 
     val bot = bot {
@@ -40,11 +42,11 @@ class Despachador {
 
             command("start") {
 
-                val result = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bot started")
+                val result = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Bot iniciado")
 
                 result.fold(
                     {
-                        // do something here with the response
+                        bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "")
                     },
                     {
                         // do something with the error
@@ -52,19 +54,7 @@ class Despachador {
                 )
             }
 
-            command("hello") {
 
-                val result = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Hello, world!")
-
-                result.fold(
-                    {
-                        // do something here with the response
-                    },
-                    {
-                        // do something with the error
-                    }
-                )
-            }
 
             command("commandWithArgs") {
                 val joinedArgs = args.joinToString()
@@ -125,12 +115,12 @@ class Despachador {
                 )
             }
 
-            command("mediaGroup") {
+            command("asd") {
                 bot.sendMediaGroup(
                     chatId = ChatId.fromId(message.chat.id),
                     mediaGroup = MediaGroup.from(
                         InputMediaPhoto(
-                            media = TelegramFile.ByUrl("https://www.sngular.com/wp-content/uploads/2019/11/Kotlin-Blog-1400x411.png"),
+                            media = TelegramFile.ByUrl("https://www.generadormemes.com/media/created/1200x675xr6uo2puy34eol2t3nkhkx8x1pd0og77ej5iqmpxih0syk8a6p6asce7n8pk40km.jpg.pagespeed.ic.meme.jpg"),
                             caption = "I come from an url :P"
                         ),
                         InputMediaPhoto(
